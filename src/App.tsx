@@ -2,6 +2,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Counter from './features/counter/Counter'
+import Auth from './features/auth/Auth'
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
+      <Auth />
       <Counter />
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more

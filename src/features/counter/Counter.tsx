@@ -1,23 +1,29 @@
-import { decrement, increment, reset } from "./counterSlice"
+import { decrement, increment, incrementByAmount, reset } from "./counterSlice"
 import { useAppDispatch, useAppSelector } from "../../app/hook"
 
-export default function Counter(){
-      const count = useAppSelector((state)=>state.counter.value)
+export default function Counter() {
+  const count = useAppSelector((state) => state.counter.value)
   const dispatch = useAppDispatch()
-    return(
-         <div className="card">
-        <button onClick={() => dispatch(increment())}>
-          count +
-        </button>
-         <button onClick={() => dispatch(decrement())}>
-          count -
-        </button>
-         <button onClick={() => dispatch(reset())}>
-          Reset
-        </button>
-        <p>
-         {count}
-        </p>
-      </div>
-    )
+  return (
+    <div className="card">
+      <button onClick={() => dispatch(increment())}>
+        count +
+      </button>
+      <button onClick={() => dispatch(decrement())}>
+        count -
+      </button>
+      <button onClick={() => dispatch(incrementByAmount(5))}>
+        + 5
+      </button>
+      <button onClick={() => dispatch(incrementByAmount(-5))}>
+        - 5
+      </button>
+      <button onClick={() => dispatch(reset())}>
+        Reset
+      </button>
+      <p>
+        {count}
+      </p>
+    </div>
+  )
 }
